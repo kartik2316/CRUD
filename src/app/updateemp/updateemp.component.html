@@ -1,0 +1,14 @@
+
+<form #newdata="ngForm">
+  {{newdata.value|json}}
+ID: <input type = "text" value="{{newid}}" name="qid" [(ngModel)]="usermodel.id">
+<br>
+NAME: <input type = "text" value="{{newname}}" name="qname" [(ngModel)]="usermodel.name">
+<br>
+email: <input type = "email" value="{{newemail}}" name="qemail" [(ngModel)]="usermodel.email">
+<br>
+gender: <input type = "text" value="{{newgender}}" name="qgender" [(ngModel)]="usermodel.gender">
+<br>
+
+<button (click)="updateRecord()">Save</button>
+</form>

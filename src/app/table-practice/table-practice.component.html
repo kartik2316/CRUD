@@ -1,0 +1,63 @@
+<div *ngIf="true;then thenBlock;else elseBlock"></div>
+<ng-template #thenBlock>
+    <h3 >CRUD Application</h3>
+</ng-template>
+<ng-template #elseBlock>
+    <h3>else part executed</h3>
+</ng-template>
+
+<!-- <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">you picked red</div>
+    <div *ngSwitchCase="'blue'">you picked blue</div>
+
+</div> -->
+<!-- <div *ngFor="let c of col;index as i">
+    {{i}}{{c}}
+</div> -->
+<br>
+u clicked {{clikedid}}
+new id {{afterclikedid}}
+<table>
+    <thead>
+    <tr>
+
+      <th>sno</th>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>gender</th>
+      <td>Action</td>
+      <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let kids of arrayObj,let i = index">
+      <td>{{i}}</td>
+      <td>{{kids.id}}</td>
+      <td>{{kids.name}}</td>
+      <td>{{kids.email}}</td>
+      <td>{{kids.gender}}</td>
+      <td><button  (click)="deleteid(i)">Delete</button></td>
+      <td><button  (click)="updateid(kids)">Update</button></td>
+
+    </tr>
+    </table>
+
+
+<div>
+
+            ID: <input type = "text" [(ngModel)]="sid" (ngModelChange)="getid($event,'sid')"/>
+            <br>
+            NAME: <input type = "text" [(ngModel)]="sname"  (ngModelChange)="getname($event)" />
+            <br>
+            email: <input type = "text" [(ngModel)]="semail"   (ngModelChange)="getemail($event)"/>
+            <br>
+            gender: <input type = "text"[(ngModel)]="sgender"  (ngModelChange)="getgender($event)" />
+            <br>
+
+
+            <button (click)="addstudent()" >Add</button>
+
+
+        </div>
+<!-- <app-updateemp (emitter)="getnewdata($event)"></app-updateemp> -->
